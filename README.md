@@ -1,14 +1,13 @@
 # Spring Boot Kubernetes and MySQL
 
-Demo project for testing Kubernetes deploys using Spring Boot and MySQL database with PVC.
+Sample project to test and deploy spring boot application with mysql database in kubernetes.
 
 ## Prerequisite
 
-- Docker (For building)
+- Docker with kubernetes enabled
+- Kubernetes command-line tool(kubectl)
 - JDK 17 LTS
 - Gradle
-- Kubernetes enabled
-- Kubernetes command-line tool (kubectl)
 
 ## Start application
 
@@ -23,7 +22,7 @@ kubectl apply -f deployment/mysql-deployment.yaml
 - Build application and deploy in kubernetes
 
 ```sh
-gradle clean dockerTag 
+gradle clean dockerTag
 kubectl apply -f deployment/app-k8s.yaml
 
 ```

@@ -7,8 +7,6 @@ RUN java -Djarmode=layertools -jar application.jar extract
 FROM openjdk:17-slim
 ARG VERSION=latest
 LABEL version=${VERSION}
-LABEL maintainer="Ashutosh Sahoo"
-LABEL description="spring-boot-kubernetes-mysql"
 
 WORKDIR /usr/local/app
 RUN useradd --user-group --system --create-home --no-log-init app
