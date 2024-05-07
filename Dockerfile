@@ -1,10 +1,10 @@
-FROM openjdk:17-slim as builder
+FROM --platform=linux/amd64 openjdk:17-slim as builder
 WORKDIR /usr/local/temp
 ARG JAR_FILE=build/libs/*.jar
 ADD ${JAR_FILE} application.jar
 RUN java -Djarmode=layertools -jar application.jar extract
 
-FROM openjdk:17-slim
+FROM --platform=linux/amd64 openjdk:17-slim
 ARG VERSION=latest
 LABEL version=${VERSION}
 
