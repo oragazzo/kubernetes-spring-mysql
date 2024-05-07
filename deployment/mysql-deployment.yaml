@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mysql
+  namespace: kubernetes-java-mysql # Add the namespace here
   labels:
     app: mysql
 spec:
@@ -16,6 +17,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: mysql-pv-claim
+  namespace: kubernetes-java-mysql # Add the namespace here
 spec:
   accessModes:
     - ReadWriteOnce
@@ -27,6 +29,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mysql
+  namespace: kubernetes-java-mysql # Add the namespace here
   labels:
     app: mysql
 spec:
@@ -91,6 +94,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: mysql-config
+  namespace: kubernetes-java-mysql # Add the namespace here
 data:
   MYSQL_DATABASE: petdb
   MYSQL_DATABASE_URL: jdbc:mysql://mysql/petdb

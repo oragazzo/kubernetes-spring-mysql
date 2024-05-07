@@ -5,6 +5,7 @@ items:
   - apiVersion: v1
     kind: Service
     metadata:
+      namespace: kubernetes-java-mysql # Add the namespace here
       labels:
         app: spring-boot-kubernetes-mysql
         version: 5.0.0
@@ -22,12 +23,14 @@ items:
   - apiVersion: v1
     kind: ServiceAccount
     metadata:
+      namespace: kubernetes-java-mysql # Add the namespace here
       name: spring-boot-kubernetes-mysql
       labels:
         account: spring-boot-kubernetes-mysql
   - apiVersion: apps/v1
     kind: Deployment
     metadata:
+      namespace: kubernetes-java-mysql # Add the namespace here
       labels:
         app: spring-boot-kubernetes-mysql
         version: 5.0.0
