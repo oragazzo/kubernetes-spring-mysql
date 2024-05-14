@@ -5,7 +5,7 @@ Sample project to test and deploy spring boot application with mysql database in
 ## Prerequisite
 
 - Docker with kubernetes enabled
-- Kubernetes command-line tool(kubectl)
+- Kubernetes command-line tool (kubectl)
 - JDK 17 LTS
 - Gradle
 
@@ -16,7 +16,6 @@ Sample project to test and deploy spring boot application with mysql database in
 ```sh
 kubectl apply -f deployment/secrets.yaml
 kubectl apply -f deployment/mysql-deployment.yaml
-
 ```
 
 - Build application and deploy in kubernetes
@@ -24,17 +23,12 @@ kubectl apply -f deployment/mysql-deployment.yaml
 ```sh
 gradle clean dockerTag
 kubectl apply -f deployment/app-k8s.yaml
-
 ```
 
 - Test application :
 
 ```curl
-curl -X GET \
-  http://localhost:31371/api/v1/pets \
-  -H 'Accept: application/json' \
-  -H 'Content-Type: application/json'
-  
+curl -X GET http://localhost:31371/api/v1/pets -H 'Accept: application/json' -H 'Content-Type: application/json'
 ```
 
 Response should be :
@@ -58,8 +52,8 @@ Response should be :
 kubectl delete -f deployment/app-k8s.yaml
 kubectl delete -f deployment/mysql-deployment.yaml
 kubectl delete -f deployment/secrets.yaml
-
 ```
+
 ### Reference
 
 - [Spring Boot](https://spring.io/projects/spring-boot)
